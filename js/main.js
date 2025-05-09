@@ -40,12 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', function() {
       const isOpen = navList.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.classList.toggle('active', isOpen);
     });
     // Optional: close menu when a link is clicked (for better UX)
     navList.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navList.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', false);
+        menuToggle.classList.remove('active');
       });
     });
   }

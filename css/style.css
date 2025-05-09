@@ -156,15 +156,34 @@ footer {
     padding: 0.3em 0;
   }
   nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5em;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 0;
     padding: 0 0.5em;
   }
   .logo {
-    font-size: 1.3em;
-    margin-bottom: 0.3em;
-    align-self: center;
+    margin-bottom: 0;
+    font-size: 1.1em;
+    padding: 0.1em 0.3em;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    border-radius: 8px;
+    padding: 0.1em 0.5em;
+  }
+  .menu-toggle.active, .menu-toggle[aria-expanded="true"] {
+    background: #e170a0;
+    color: #fff;
+    box-shadow: 0 2px 8px #e3e6ee;
+    transform: scale(1.08);
+  }
+  #nav-list {
+    margin-top: 0.5em;
   }
   nav ul {
     flex-direction: column;
