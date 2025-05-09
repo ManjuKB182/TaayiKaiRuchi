@@ -509,4 +509,45 @@ input:focus, textarea:focus {
 .footer-single-line a:hover {
   color: #e170a0;
   text-decoration: underline;
+}
+
+/* --- Mobile menu styles --- */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #2d3559;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 200;
+}
+.menu-icon {
+  display: inline-block;
+  font-size: 1.5em;
+  line-height: 1;
+}
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+  #nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 2px 8px #e3e6ee;
+    border-radius: 0 0 12px 12px;
+    z-index: 150;
+    padding: 0.5em 0;
+  }
+  #nav-list.open {
+    display: flex;
+  }
+  nav {
+    position: relative;
+  }
 } 

@@ -32,4 +32,21 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   updateFlow();
   setInterval(next, 3000);
+
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.getElementById('nav-list');
+  if (menuToggle && navList) {
+    menuToggle.addEventListener('click', function() {
+      const isOpen = navList.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+    // Optional: close menu when a link is clicked (for better UX)
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', false);
+      });
+    });
+  }
 }); 
